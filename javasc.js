@@ -13,25 +13,22 @@ function max(){
 
 
 function maxOfThree(){
-    var e1 = parseInt(document.getElementById('input21').value);
-    var e2 = parseInt(document.getElementById('input22').value);
-    var e3 = parseInt(document.getElementById('input23').value);
-
-    var arr = [];
-
-    arr.push(e1);
-    arr.push(e2);
-    arr.push(e3);
-
-    let max = arr.reduce((a, b) => Math.max(a, b), -Infinity);
-
-    document.getElementById('result2').innerHTML=max;
+    var e1 = document.getElementById('input21').value;
+    const gg = e1.split(',');
+    let max=0;
+for(let i=0;i<gg.length;i++){
+    if(gg[i]>max){
+        max=gg[i];
+    }
+}
+document.getElementById('result2').innerHTML=max;
 }
 
 function isVowel(){
-    var v1=document.getElementById('input21').value;
-    var len1=parseInt(v1.length);
-    if(len1==1){
+    var v1=document.getElementById('input3').value;
+    console.log(v1);
+    var len1=v1.length;
+    if(len1===1){
         document.getElementById('result3').innerHTML='true';
     }else{
         document.getElementById('result3').innerHTML='false';
